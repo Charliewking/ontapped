@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Card } from '../app/models/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ontapped';
+  public temp: Card[] = [];
+
+  constructor() {
+    this.temp = [
+      {name: 'card1', link: '#', text: 'This is Card 1}'},
+      {name: 'card2', link: '#', text: 'This is Card 2}'},
+    ];
+   }
+
+
+
+
 }
