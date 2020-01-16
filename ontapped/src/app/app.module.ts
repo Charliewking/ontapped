@@ -7,6 +7,8 @@ import { CardComponent } from './components/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { reducers, metaReducers } from './reducers';
         strictStateImmutability: true,
         strictActionImmutability: true
       }
-    })
+    }),
+    EffectsModule.forRoot([AppEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

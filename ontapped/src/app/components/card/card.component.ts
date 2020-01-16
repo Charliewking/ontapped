@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CardApiService } from 'src/app/services/card-api.service';
 
 @Component({
   selector: 'app-card',
@@ -7,9 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  cardService: CardApiService;
+
   @Input() name: string;
   @Input() text: string;
   @Input() link: string;
+
+  
+
 
   ngOnInit() {
 

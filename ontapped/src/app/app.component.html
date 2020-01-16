@@ -76,8 +76,11 @@
   <input type="hidden" #selection>
 
   <div class="card-container">
-    <div *ngFor="let card of temp" >
-      <app-card name={{card.name}} ></app-card>
+    <div *ngIf="card$ | async" >
+      <app-card 
+        [card]="card$ | async"
+
+      ></app-card>
     </div>
   </div>
 

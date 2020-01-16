@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Card } from '../app/models/interfaces';
+import { CardApiService } from './services/card-api.service';
+import { getCard } from './services/card-api.action';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +10,17 @@ import { Card } from '../app/models/interfaces';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  cardService: CardApiService;
+
   title = 'ontapped';
-  public temp: Card[] = [];
+  public card: Card;
 
   constructor() {
-    this.temp = [
-      {name: 'card1', link: '#', text: 'This is Card 1}'},
-      {name: 'card2', link: '#', text: 'This is Card 2}'},
-    ];
-   }
+    
+  }
 
-
-
+  lookupCard(name: string) {
+    store.dispatch(getCard({ name: name }));
+  }
 
 }
